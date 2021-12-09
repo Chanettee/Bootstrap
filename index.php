@@ -7,24 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>63116503</title>
 
+    <style>
+        .bg1 {
+            background-color: #80deea;
+        }
+
+        .bg2 {
+            background-color: #e7e9fd;
+        }
+
+        .detail {
+            align-self: center;
+            background-color: #80deea;
+            }
+
+        .fheader {
+                color: black;
+                text-align: center;
+            }
+    </style>
 
     <div class="container">
         <div>
             <img src=" https://f.ptcdn.info/214/050/000/ononbjjl5RFheSJGJpq-o.jpg" class="img-fluid" alt="...">
         </div>
 
-        <style>
-            .fheader{
-                color: black;
-                text-align:center;
-            }
-        </style>
-        
         <div class="fheader">
             <h1>K-pop</h1>
             <p>GOT7</p>
@@ -34,7 +48,7 @@
 
 <br>
 
-<body>
+<body class="bg2">
     <div class="row">
         <div class="col-4">
             <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
@@ -50,8 +64,6 @@
             <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
                 alt="Mark">
         </div>
-
-
 
         <div class="row">
             <div class="col-4">
@@ -75,37 +87,100 @@
         </div>
 </body>
 
-<footer>
-    <table class="table table-hover table-bordered border-primary">
-        <caption>รายการโทรทัศน์</caption>
-
-        <thead class="table-dark">
-            <tr>
-                <th>ปี</th>
-                <th>รายการ</th>
-                <th>เครือข่าย</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>2556</td>
-                <td>2558</td>
-                <td>2560</td>
-            </tr>
-            <tr>
-                <td>Who Is Next (WIN)</td>
-                <td>Dream Knight</td>
-                <td>I Can See Your Voice(Original Version)</td>
-            </tr>
-            <tr>
-                <td>เอ็มเน็ตทีวี</td>
-                <td>ทีวีเอ็น</td>
-                <td>Workpoint 23</td>
-            </tr>
-        </tbody>
-    </table>
-
-</footer>
+<div class="col-9">
+    <button id="btnBack"> back </button>
+    <div id="main">
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody id="tblPost">
+            </tbody>
+        </table>
+    </div>
+    <div id="detail">
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>UserID</th>
+                </tr>
+            </thead>
+            <tbody id="tblDetails">
+            </tbody>
+        </table>
+    </div>
 </div>
+</div>
+<div class="detail">
+    <div class="row" style="margin-left: 50%;">
+        <div class="col-12 ">
+            <p>63116503 ชเนตตี เหล็กหลี</p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<script>
+    function showDetails(id) {
+        $("#main").hide();
+        $("#detail").show();
+
+        var url = "https://jsonplaceholder.typicode.com/posts/" + id
+        $.getJSON(url)
+            .done((data) => {
+                console.log(data);
+                var line = "<tr id='detailROW'";
+                line += "><td>" + data.id + "</td>"
+                line += "<td><b>" + data.title + "</b><br/>"
+                line += data.body + "</td>"
+                line += "<td>" + data.userId + "</td>"
+                line += "</tr>";
+                $("#tblDetails").append(line);
+            })
+            .fail((xhr, err, status) => {
+            })
+    }
+    function LoadPosts() {
+        var url = "https://jsonplaceholder.typicode.com/posts"
+        var i = 0;
+        $.getJSON(url)
+            .done((data) => {
+                $.each(data, (k, item) => {
+
+                    i++;
+                    var line = "<tr>";
+                    line += "<td>" + item.id + "</td>"
+                    line += "<td><b>" + item.title + "</b><br/>"
+                    line += item.body + "</td>"
+                    line += "<td><button onClick='showDetails(" + item.id + ");'>Link</button></td>"
+                    line += "</tr>";
+                    $("#tblPost").append(line);
+                    if (i == 10) {
+                        loadPost().stop();
+                    };
+                });
+                $("#main").show();
+            })
+            .fail((xhr, err, status) => {
+            })
+    }
+    $(() => {
+        LoadPosts();
+        $("#detail").hide();
+        $("#btnBack").click(() => {
+            $("#main").show();
+            $("#detail").hide();
+            $("#detailROW").remove();
+        });
+    })
+</script>
+
+
 
 </html>
