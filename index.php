@@ -16,32 +16,32 @@
 
     <style>
         .bg1 {
+            text-align: center;
             background-color: #80deea;
         }
 
         .bg2 {
-            background-color: #e7e9fd;
+            background-color: #e1f5fe;
         }
 
-        .detail {
-            align-self: center;
-            background-color: #80deea;
-            }
+        .bg3 {
+            text-align: center;
+        }
 
-        .fheader {
-                color: black;
-                text-align: center;
-            }
     </style>
+
+    <div class="bg3">
+        <h1>K-pop</h1>
+        <p>GOT7</p>
+    </div>
 
     <div class="container">
         <div>
             <img src=" https://f.ptcdn.info/214/050/000/ononbjjl5RFheSJGJpq-o.jpg" class="img-fluid" alt="...">
         </div>
 
-        <div class="fheader">
-            <h1>K-pop</h1>
-            <p>GOT7</p>
+        <div class="bg3">
+            <p><h1>Mark Tuan</h1></p>
         </div>
 
 </head>
@@ -50,82 +50,66 @@
 
 <body class="bg2">
     <div class="row">
-        <div class="col-4">
-            <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
-                alt="Mark">
-        </div>
+        <div class="col-3"></div>
 
         <div class="col-4">
             <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
                 alt="Mark">
-        </div>
-
-        <div class="col-4">
-            <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
-                alt="Mark">
-        </div>
-
-        <div class="row">
-            <div class="col-4">
-                มาร์ก ต้วน เกิดวันที่ 4 กันยายน ค.ศ. 1993 เป็นนักร้อง นักเต้น นักแต่งเพลง สัญชาติอเมริกัน-ไต้หวัน
+            <p class="card text">มาร์ก ต้วน เกิดวันที่ 4 กันยายน ค.ศ. 1993 เป็นนักร้อง นักเต้น นักแต่งเพลง
+                สัญชาติอเมริกัน-ไต้หวัน
                 เป็นหนึ่งในสมาชิกวงก็อตเซเวน ประเทศเกาหลีใต้ เริ่มเข้าสู่วงการบันเทิงตั้งแต่ พ.ศ. 2557
                 มีความสามารถพิเศษด้านศิลปะการต่อสู้เป็นบุตรคนที่สาม มีพี่สาว 2 คนและน้องชายอีก 1 คน
-            </div>
-
-            <div class="col-4">
                 ตอนที่เขายังเด็กไม่ได้สนใจที่จะเป็นนักร้อง แต่ในปี ค.ศ. 2010
-                ทางค่ายเจวายพีได้เข้ามารับสมัครออดิชั่นเพื่อเป็นศิลปินที่โรงเรียนของเขา มาร์กไม่ได้สนใจ
-                จนกระทั่งได้รับการผลักดันจากพ่อแม่และทางโรงเรียนบอกให้เขาเข้ารับการคัดเลือก
-                มาร์กจึงตัดสินใจเข้าร่วมจนได้รับคัดเลือก ซึ่งเป็นครั้งแรกที่เขาได้ขึ้นแสดงบนเวที
-            </div>
+                ทางค่ายเจวายพีได้เข้ามารับสมัครออดิชั่นเพื่อเป็นศิลปินที่โรงเรียนของเขา มาร์กไม่ได้สนใจ</p>
+        </div>
 
-            <div class="col-4">
+        <div class="col-4">
+            <img src="https://i.pinimg.com/564x/3b/ed/9c/3bed9ca0f4bd019c46a1a9d9c82629ad.jpg" class="img-fluid"
+                alt="Mark">
+            <p class="card text"> จนกระทั่งได้รับการผลักดันจากพ่อแม่และทางโรงเรียนบอกให้เขาเข้ารับการคัดเลือก
+                มาร์กจึงตัดสินใจเข้าร่วมจนได้รับคัดเลือก ซึ่งเป็นครั้งแรกที่เขาได้ขึ้นแสดงบนเวที
                 การฝึกอบรมของเขาใช้เวลาประมาณ 3 ปีครึ่งก่อนที่จะรวมกับสมาชิกอีก 6 คน
                 เปิดตัวอย่างเป็นทางการครั้งแรกเมื่อวันที่ 15 มกราคม ค.ศ. 2014 ในฐานะสมาชิกของวงบอยแบนด์ชาวเกาหลีใต้
-                ก็อตเซเวน มาร์กรับหน้าที่เป็นแร็ปเปอร์
+                ก็อตเซเวน มาร์กรับหน้าที่เป็นแร็ปเปอร์</p>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-9 pull-right ">
+                <button id="btnBack"> back </button>
+                <div id="main">
+                    <table class="table table-success table-striped ">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblPost"></tbody>
+                    </table>
+                </div>
+                <div id="detail">
+                    <table class="table table-success table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>UserID</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblDetails">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 </body>
 
-<div class="col-9">
-    <button id="btnBack"> back </button>
-    <div id="main">
-        <table class="table table-success table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                </tr>
-            </thead>
-            <tbody id="tblPost">
-            </tbody>
-        </table>
-    </div>
-    <div id="detail">
-        <table class="table table-success table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>UserID</th>
-                </tr>
-            </thead>
-            <tbody id="tblDetails">
-            </tbody>
-        </table>
-    </div>
-</div>
-</div>
-<div class="detail">
-    <div class="row" style="margin-left: 50%;">
-        <div class="col-12 ">
-            <p>63116503 ชเนตตี เหล็กหลี</p>
-        </div>
-    </div>
-</div>
-</div>
-</body>
 <script>
     function showDetails(id) {
         $("#main").hide();
@@ -181,6 +165,13 @@
     })
 </script>
 
+
+<footer>
+    <div class="bg1">
+        Chanettee Leklee
+    </div>
+
+</footer>
 
 
 </html>
